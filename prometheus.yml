@@ -1,0 +1,13 @@
+global:
+    scrape_interval: 5s
+    external_labels:
+        monitor: 'prometheus-grafana'
+scrape_configs:
+    - job_name: 'prometheus'
+      static_configs:
+          - targets: ['localhost:9090']
+
+    - job_name: 'hystrix_metrics'
+      metrics_path: /metrics
+      static_configs:
+      - targets: ['hystrix_exporter:9444']
