@@ -9,10 +9,10 @@ services:
       ports:
           - '9090:9090'
 
-  #hystrix_exporter:
-  #        image: maurely/hystrix_exporter:latest
-  #        ports:
-  #            - '9444:9444'
+  hystrix_exporter:
+      image: maurely/hystrix_exporter:latest
+      ports:
+          - '9444:9444'
 
   grafana:
         image: grafana/grafana:latest
